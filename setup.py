@@ -41,7 +41,8 @@ setup(
         'numpy',
         'pandas',
         'scipy',
-        'tensorflow-cpu',
+        'tensorflow-cpu; platform_machine != "arm64" or platform_system != "Darwin"',
+        'tensorflow-macos; platform_machine == "arm64" and platform_system == "Darwin"',
     ],
     tests_require=['mock'],
     classifiers=[
